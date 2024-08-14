@@ -5,7 +5,7 @@ import {
 } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
 
-const Even09 = () => {
+const Odd11 = () => {
     const [state, setState] = useState([])
     const [name, setName] = useState("")
     const toast = useToast()
@@ -13,7 +13,7 @@ const Even09 = () => {
 
     const getData = async () => {
         try {
-            const response = await axios.get('https://681c54859b2ef3a7.mokky.dev/Even_09')
+            const response = await axios.get('https://a67474a4e6e67b1c.mokky.dev/Odd_10')
             setState(response.data)
         } catch (error) {
             console.log(error);
@@ -22,7 +22,7 @@ const Even09 = () => {
 
     const handleStatus = async (id, status) => {
         try {
-            const response = await axios.patch(`https://681c54859b2ef3a7.mokky.dev/Even_09/${id}`, {
+            const response = await axios.patch(`https://a67474a4e6e67b1c.mokky.dev/Odd_10/${id}`, {
                 status: status,
             })
             setState(state.map(item => item.id === id ? { ...item, status: response.data.status } : item));
@@ -36,7 +36,7 @@ const Even09 = () => {
 
         const postData = async () => {
             try {
-                const response = await axios.post('https://681c54859b2ef3a7.mokky.dev/Even_09', {
+                const response = await axios.post('https://a67474a4e6e67b1c.mokky.dev/Odd_10', {
                     name,
                     status: false,
                 })
@@ -63,7 +63,7 @@ const Even09 = () => {
 
     const handleDelete = async (id) => {
         try {
-            const response = await axios.delete(`https://681c54859b2ef3a7.mokky.dev/Even_09/${id}`)
+            const response = await axios.delete(`https://a67474a4e6e67b1c.mokky.dev/Odd_10/${id}`)
             setState(state.filter(item => item.id !== id));
         } catch (error) {
             console.log(error);
@@ -120,4 +120,4 @@ const Even09 = () => {
     )
 }
 
-export default Even09
+export default Odd11

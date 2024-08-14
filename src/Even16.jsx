@@ -13,7 +13,7 @@ const Even16 = () => {
 
     const getData = async () => {
         try {
-            const response = await axios.get('https://681c54859b2ef3a7.mokky.dev/Even_16')
+            const response = await axios.get('https://a67474a4e6e67b1c.mokky.dev/Even_16')
             setState(response.data)
         } catch (error) {
             console.log(error);
@@ -22,7 +22,7 @@ const Even16 = () => {
 
     const handleStatus = async (id, status) => {
         try {
-            const response = await axios.patch(`https://681c54859b2ef3a7.mokky.dev/Even_16/${id}`, {
+            const response = await axios.patch(`https://a67474a4e6e67b1c.mokky.dev/Even_16/${id}`, {
                 status: status,
             })
             setState(state.map(item => item.id === id ? { ...item, status: response.data.status } : item));
@@ -36,7 +36,7 @@ const Even16 = () => {
 
         const postData = async () => {
             try {
-                const response = await axios.post('https://681c54859b2ef3a7.mokky.dev/Even_16', {
+                const response = await axios.post('https://a67474a4e6e67b1c.mokky.dev/Even_16', {
                     name,
                     status: false,
                 })
@@ -63,7 +63,7 @@ const Even16 = () => {
 
     const handleDelete = async (id) => {
         try {
-            const response = await axios.delete(`https://681c54859b2ef3a7.mokky.dev/Even_16/${id}`)
+            const response = await axios.delete(`https://a67474a4e6e67b1c.mokky.dev/Even_16/${id}`)
             setState(state.filter(item => item.id !== id));
         } catch (error) {
             console.log(error);
